@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <p>Définir : <strong>{{ word.word }}</strong></p>
+    <form action="/quiz" method="POST">
+        <input type="hidden" name="word_id" value="{{ word.id }}">
+        <input type="text" name="answer" placeholder="Votre réponse">
+        <button type="submit">Soumettre</button>
+    </form>
+</body>
+</html>
