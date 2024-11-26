@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vocabulaire App</title>
+</head>
+<body>
+    <h1>Tableau de bord</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="word" placeholder="Mot" required>
+        <input type="text" name="definition" placeholder="Définition" required>
+        <input type="text" name="theme" placeholder="Thème" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    <form action="/import" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Importer des mots</button>
+    </form>
+    <ul>
+        {% for word in words %}
+        <li>{{ word.word }} - {{ word.definition }} ({{ word.theme }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/quiz">Faire un Quiz</a>
+</body>
+</html>
